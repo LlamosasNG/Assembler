@@ -229,9 +229,9 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000         0xc1
+.debug_info       0x000000         0xbb
  *(.debug_info)
- .debug_info      0x000000         0xc1 build/default/debug/_ext/1476340659/newmainasm33.o
+ .debug_info      0x000000         0xbb build/default/debug/_ext/1476340659/newmainasm33.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0x14

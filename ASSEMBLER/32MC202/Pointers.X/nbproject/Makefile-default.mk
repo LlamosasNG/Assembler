@@ -95,14 +95,14 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1476340659/newmainasm33.o: ../Template.X/newmainasm33.s  .generated_files/flags/default/eb8a937c22bdadb69bc91cbd5aac065515a7d3a0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/_ext/1476340659/newmainasm33.o: ../Template.X/newmainasm33.s  .generated_files/flags/default/4d7aa80d68560c9aa5bb260e5e9c42e762e4e4bd .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/1476340659" 
 	@${RM} ${OBJECTDIR}/_ext/1476340659/newmainasm33.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1476340659/newmainasm33.o 
 	${MP_CC} $(MP_EXTRA_AS_PRE)  ../Template.X/newmainasm33.s  -o ${OBJECTDIR}/_ext/1476340659/newmainasm33.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/_ext/1476340659/newmainasm33.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
 else
-${OBJECTDIR}/_ext/1476340659/newmainasm33.o: ../Template.X/newmainasm33.s  .generated_files/flags/default/ec83f8dfc5ded4408ef723876850719f1bfc2340 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/_ext/1476340659/newmainasm33.o: ../Template.X/newmainasm33.s  .generated_files/flags/default/5bc02a3e882f73080649318de318539fce9efc8 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/1476340659" 
 	@${RM} ${OBJECTDIR}/_ext/1476340659/newmainasm33.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1476340659/newmainasm33.o 

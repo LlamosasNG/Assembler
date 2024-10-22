@@ -168,19 +168,19 @@ no_intercambio:
     ; Incrementar el índice del ciclo interno
     ADD #2, W4             ; Incrementar W4 en 2 para apuntar al siguiente elemento
     SUB #1, W3             ; Decrementar las iteraciones restantes del ciclo interno afecta a z y n
-    BRA GE, Ciclo_interno     ; Repetir mientras W3 >= 0 mayor o igual
+    BRA GE, Ciclo_interno  ; Repetir mientras W3 >= 0 mayor o igual
     ;banderas de z y , si z esta activado W3
 
     ; Incrementar el índice del ciclo externo
     ADD #2, W2             ; Incrementar W2 en 2 para la siguiente iteración del ciclo externo
     SUB #1, W1             ; Decrementar las iteraciones restantes del ciclo externo
-    BRA GE, Ciclo_externo     ; Repetir mientras W1 > 1
+    BRA GE, Ciclo_externo  ; Repetir mientras W1 > 1
 
-    BRA fin     ; Fin del programa, bucle infinito
+    BRA end     ; Fin del programa, bucle infinito
     
-    fin:
+    end:
 	; Bucle infinito para detener el programa
-	BRA fin
+ 	BRA end
 	
 	
 /* Exercise 1 */
@@ -202,6 +202,7 @@ MOV	W0,	    0X0800  ;Example of store in a specific address
 MOV	#0X0800,    W1      ;W1 as a pointer of the address 0x0800
 MOV	[W1++],	    W2	    ;Get data from specific address using a pointer
 */
+
     MOV	    #20000,	    W7
     LOOP1:
     CP0	    W7			;(1 Cycle)
