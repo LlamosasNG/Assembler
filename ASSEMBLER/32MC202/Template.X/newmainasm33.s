@@ -88,10 +88,7 @@ y_input:  .space 2*SAMPLES
     .section .nbss, bss, near
 var1:     .space 2               ;Example of allocating 1 word of space for
                                  ;variable "var1".
-
-
-
-
+				 
 ;..............................................................................
 ;Code Section in Program Memory
 ;..............................................................................
@@ -107,7 +104,7 @@ __reset:
                                   ;Optionally use RCALL instead of CALL
 
 ;<<insert more user code here>>
-	
+		
 SETM    AD1PCFGL		;PORTB AS DIGITAL
 CLR	TRISB			;PORTB AS OUTPUTS
 SETM	PORTB			;PORTB = 0XFFFF
@@ -201,7 +198,7 @@ MOV	W0,	    0X0800  ;Example of store in a specific address
 	
 MOV	#0X0800,    W1      ;W1 as a pointer of the address 0x0800
 MOV	[W1++],	    W2	    ;Get data from specific address using a pointer
-*/
+
 
     MOV	    #20000,	    W7
     LOOP1:
@@ -223,6 +220,7 @@ MOV	[W1++],	    W2	    ;Get data from specific address using a pointer
     COM	    PORTB
     NOP
     BRA     done              ;Place holder for last line of executed code
+*/
 
 ;..............................................................................
 ;Subroutine: Initialization of W registers to 0x0000
