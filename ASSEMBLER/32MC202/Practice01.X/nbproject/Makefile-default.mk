@@ -95,14 +95,14 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/newmainasm33.o: newmainasm33.s  .generated_files/flags/default/e944506fc6d5e57e019a494a2ba942bf86125be6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/newmainasm33.o: newmainasm33.s  .generated_files/flags/default/6cc3b49f3ee81c8f2046bc671261c3ca54c0ab80 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/newmainasm33.o.d 
 	@${RM} ${OBJECTDIR}/newmainasm33.o 
 	${MP_CC} $(MP_EXTRA_AS_PRE)  newmainasm33.s  -o ${OBJECTDIR}/newmainasm33.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/newmainasm33.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
 else
-${OBJECTDIR}/newmainasm33.o: newmainasm33.s  .generated_files/flags/default/750adf9f6e8bcef5c5449cf53c20872249f58d35 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/newmainasm33.o: newmainasm33.s  .generated_files/flags/default/cf071bb36fc6284ff8fb0440fbe931d9d335e0f1 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/newmainasm33.o.d 
 	@${RM} ${OBJECTDIR}/newmainasm33.o 
