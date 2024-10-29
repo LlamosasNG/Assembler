@@ -96,7 +96,7 @@
 				      ;Optionally use RCALL instead of CALL
 
     ;<<insert more user code here>>
-    MOV #4, W11 
+    MOV #2, W11 
     
     MOV #0, W3
     MOV #2, W4
@@ -129,6 +129,73 @@ OrdenaAscendente:
 
 OrdenaDescendente:
     ; (Inserta tu código para esta condición)
+    MOV #1, W11   ;
+    MOV #100, W10          ; Valor 100
+    MOV #0x0800, W0        ; Dirección base de la memoria RAM
+    MOV W10, [W0]          ; Almacenar 100 en 0x0800
+
+    MOV #50, W10           ; Valor 50
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 50
+
+    MOV #30, W10           ; Valor 30
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 30
+
+    MOV #120, W10          ; Valor 120
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 120
+
+    MOV #15, W10           ; Valor 15
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 15
+
+    MOV #10, W10           ; Valor 10
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 10
+
+    ; Ordenar los valores usando burbuja
+    MOV #0x0800, W0        ; Dirección base de la memoria RAM
+    MOV #5, W1             ; Número de elementos a ordenar (6 elementos)
+    
+    sort_loop:
+	CLR W2                 ; W2 como índice del ciclo externo
+	
+    Ciclo_externo:             ;itera n-1 cantidad de veces para la cantidad de numeros
+	MOV W1, W3             ; W3 para contar las iteraciones del ciclo interno
+	SUB #1, W3             ; Reducir en 1 porque el ciclo externo tiene una iteración menos
+	CLR W4                 ; W4 como índice del ciclo interno
+
+    Ciclo_interno: ;compara de 2 en 2 registros y lo hace n-1 veces
+	; Calcular la dirección de los elementos a comparar
+	MOV W0, W6             ; Copiar la dirección base a W6
+	ADD W4, W6, W6         ; Calcular la dirección efectiva (W6 = W0 + W4)
+	MOV [W6], W7           ; W7 = elemento[i]
+
+	ADD #2, W6             ; Apuntar al siguiente elemento
+	MOV [W6], W8           ; W8 = elemento[i+1]
+
+	; Comparar los elementos
+	CP W7, W8              ; Comparar elemento[i] con elemento[i+1] 30 - 50 = -20
+	BRA LT, no_intercambio       ; Si elemento[i] < elemento[i+1], no hacer intercambio si w7 menor a w8 salta a no
+
+	; si flag N es negativo indica que se debe w7 es menor a w8
+	; Intercambiar los elementos si están en el orden incorrecto
+	MOV W7, [W6]           ; elemento[i+1] = elemento[i]
+	SUB #2, W6             ; Apuntar de nuevo a elemento[i]
+	MOV W8, [W6]           ; elemento[i] = elemento[i+1]
+	
+    no_intercambio:
+	; Incrementar el índice del ciclo interno
+	ADD #2, W4             ; Incrementar W4 en 2 para apuntar al siguiente elemento
+	SUB #1, W3             ; Decrementar las iteraciones restantes del ciclo interno afecta a z y n
+	BRA GE, Ciclo_interno     ; Repetir mientras W3 >= 0 mayor o igual
+	;banderas de z y , si z esta activado W3
+
+	; Incrementar el índice del ciclo externo
+	ADD #2, W2             ; Incrementar W2 en 2 para la siguiente iteración del ciclo externo
+	SUB #1, W1             ; Decrementar las iteraciones restantes del ciclo externo
+	BRA GE, Ciclo_externo     ; Repetir mientras W1 > 1
     BRA done   
     
 Pares:  

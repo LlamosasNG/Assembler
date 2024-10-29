@@ -69,11 +69,11 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0x82            0xc3  (195)
-.text                        0x282                0xf8           0x174  (372)
-.dinit                       0x37a                0x14            0x1e  (30)
-.myconstbuffer               0x38e                 0x8             0xc  (12)
+.text                        0x282               0x14a           0x1ef  (495)
+.dinit                       0x3cc                0x14            0x1e  (30)
+.myconstbuffer               0x3e0                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x261  (609) 1%
+                 Total "program" memory used (bytes):          0x2dc  (732) 2%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x800]
@@ -103,7 +103,7 @@ External Symbols in Program Memory (by address):
                   0x000206                  __data_init
                   0x00027c                  __DefaultInterrupt
                   0x000282                  __reset
-                  0x00036e                  _wreg_init
+                  0x0003c0                  _wreg_init
 
 External Symbols in Program Memory (by name):
 
@@ -111,7 +111,7 @@ External Symbols in Program Memory (by name):
                   0x000206                  __data_init
                   0x000206                  __data_init_standard
                   0x000282                  __reset
-                  0x00036e                  _wreg_init
+                  0x0003c0                  _wreg_init
 
 Memory Configuration
 
@@ -229,18 +229,18 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000         0xb5
+.debug_info       0x000000         0xaf
  *(.debug_info)
- .debug_info      0x000000         0xb5 build/default/debug/newmainasm33.o
+ .debug_info      0x000000         0xaf build/default/debug/newmainasm33.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0x14
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x14 build/default/debug/newmainasm33.o
 
-.debug_line       0x000000         0xb8
+.debug_line       0x000000         0xe1
  *(.debug_line)
- .debug_line      0x000000         0xb8 build/default/debug/newmainasm33.o
+ .debug_line      0x000000         0xe1 build/default/debug/newmainasm33.o
 
 .debug_frame
  *(.debug_frame)
@@ -915,14 +915,14 @@ __c30_signature
 .ybss               0x0c00         0x80
  .ybss              0x0c00         0x80 build/default/debug/newmainasm33.o
 
-.text             0x000282         0xf8
- .text            0x000282         0xf8 build/default/debug/newmainasm33.o
+.text             0x000282        0x14a
+ .text            0x000282        0x14a build/default/debug/newmainasm33.o
                   0x000282                  __reset
-                  0x00036e                  _wreg_init
+                  0x0003c0                  _wreg_init
 
-.dinit            0x00037a         0x14
- .dinit           0x00037a         0x14 data_init
+.dinit            0x0003cc         0x14
+ .dinit           0x0003cc         0x14 data_init
 
-.myconstbuffer    0x00038e          0x8
+.myconstbuffer    0x0003e0          0x8
  .myconstbuffer
-                  0x00038e          0x8 build/default/debug/newmainasm33.o
+                  0x0003e0          0x8 build/default/debug/newmainasm33.o
