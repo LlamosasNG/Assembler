@@ -1,1 +1,5 @@
+<<<<<<<< HEAD:ASSEMBLER/32MC202/Practice02.X/.generated_files/flags/default/19a0bba30aacb746a49362d5eb81bc328c74db12
+ -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"C:\Users\gonza\OneDrive\Documentos\GitHub\Assembler\ASSEMBLER\32MC202\Practice02.X\newmainasm33.s
+========
  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"C:\Users\gonza\OneDrive\Documentos\GitHub\GitAlumnosArqui\ASSEMBLER\32MC202\Template.X\newmainasm33.s
+>>>>>>>> 4263793b041cf6f249c50b14ef5bfa3c0e6f4327:ASSEMBLER/32MC202/Practice03.X/.generated_files/flags/default/eb8a937c22bdadb69bc91cbd5aac065515a7d3a0

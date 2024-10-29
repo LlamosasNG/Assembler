@@ -1,1 +1,5 @@
+<<<<<<<< HEAD:ASSEMBLER/32MC202/Practice02.X/.generated_files/flags/default/6269cca79ac03fbdbcdbae2e1c071723ce983e8a
+ -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"C:\Users\gonza\OneDrive\Documentos\GitHub\Assembler\ASSEMBLER\32MC202\Practice02.X\newmainasm33.s
+========
  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"C:\Users\gonza\OneDrive\Documentos\GitHub\GitAlumnosArqui\ASSEMBLER\32MC202\Template.X\newmainasm33.s
+>>>>>>>> 4263793b041cf6f249c50b14ef5bfa3c0e6f4327:ASSEMBLER/32MC202/Practice03.X/.generated_files/flags/default/ec83f8dfc5ded4408ef723876850719f1bfc2340
