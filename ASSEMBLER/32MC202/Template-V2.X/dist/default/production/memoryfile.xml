@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/debug/Practice02.X.debug.elf">
+  <executable name="dist/default/production/Template.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
@@ -11,8 +11,8 @@
     <memory name="program">
       <units>bytes</units>
       <length>33024</length>
-      <used>771</used>
-      <free>32253</free>
+      <used>339</used>
+      <free>32685</free>
     </memory>
   </executable>
 </project>

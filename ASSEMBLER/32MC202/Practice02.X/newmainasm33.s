@@ -96,7 +96,6 @@
 				      ;Optionally use RCALL instead of CALL
 
     ;<<insert more user code here>>
-    MOV #2, W11 
     
     MOV #0, W3
     MOV #2, W4
@@ -107,6 +106,8 @@
     MOV #700, W9
     MOV #6000, W10
     MOV #705, W12
+    
+    MOV #3, W11 
 
     CP W11, #1           
     BRA Z, OrdenaAscendente 
@@ -126,7 +127,6 @@
 OrdenaAscendente:
     ; (Inserta tu código para esta condición)
     
-
 OrdenaDescendente:
     ; (Inserta tu código para esta condición)
     MOV #1, W11   ;
@@ -150,9 +150,25 @@ OrdenaDescendente:
     ADD #2, W0             ; Siguiente dirección de memoria
     MOV W10, [W0]          ; Almacenar 15
 
+    MOV #22, W10           ; Valor 22
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 22
+    
     MOV #10, W10           ; Valor 10
     ADD #2, W0             ; Siguiente dirección de memoria
     MOV W10, [W0]          ; Almacenar 10
+    
+    MOV #85, W10           ; Valor 85
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 85
+    
+    MOV #92, W10           ; Valor 92
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 92
+    
+    MOV #11, W10           ; Valor 11
+    ADD #2, W0             ; Siguiente dirección de memoria
+    MOV W10, [W0]          ; Almacenar 11
 
     ; Ordenar los valores usando burbuja
     MOV #0x0800, W0        ; Dirección base de la memoria RAM
@@ -260,7 +276,9 @@ Next_W10:
     AND W0, #0x0001, W1
     CP0 W1
     BRA Z, done
-    CLR W12             
+    CLR W12
+
+BRA done
 
 Impares:
     MOV W3, W0          
