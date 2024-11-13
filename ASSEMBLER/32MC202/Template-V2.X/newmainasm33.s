@@ -123,29 +123,46 @@ MOV	[W1++],	    W2		;Get data from specific address using a pointer
 	
 done:	    ;INFINITE LOOP    
     COM	    PORTB
-    CALL Retardo1s
+    CALL delay_350ms
     BRA     done              ;Place holder for last line of executed code
-
-    Retardo1s:
-    MOV	    #20000,	    W7
+    
+delay_350ms:
+    MOV #1000, W7
+    
+    LOOP3:
+	CP0 W7			;(1 Cycle)
+	BRA Z, END_DELAY	;(1 Cycle if not jump)
+	DEC W7, W7		;(1 Cycle)
+	MOV #69, W8		;(1 Cycle)
+	
+    LOOP4:
+	DEC W8, W8		;(1 Cycle)
+	CP0 W8			;(1 Cycle)
+	BRA Z, LOOP3		;(1 Cycle if not jump)
+	BRA LOOP4		;(2 Cycle if jump)
+    
+    END_DELAY:
+	Return
+/*
+RETARDO_1s:
+    MOV #20000, W7
+    
     LOOP1:
-    CP0	    W7			;(1 Cycle)
-    BRA	    Z,	    END_DELAY	;(1 Cycle if not jump)
-    DEC	    W7,	    W7		;(1 Cycle)
-    
-    MOV	    #10,	    W8		;(1 Cycle)
+	CP0 W7			;(1 Cycle)
+	BRA Z, END_DELAY	;(1 Cycle if not jump)
+	DEC W7, W7		;(1 Cycle)
+	MOV #10, W8		;(1 Cycle)
+	
     LOOP2:
-    DEC	    W8,	    W8		;(1 Cycle)
-    CP0	    W8			;(1 Cycle)
-    BRA	    Z,	    LOOP1	;(1 Cycle if not jump)
-    BRA	    LOOP2		;(2 Cycle if jump)
+	DEC W8, W8		;(1 Cycle)
+	CP0 W8			;(1 Cycle)
+	BRA Z, LOOP1		;(1 Cycle if not jump)
+	BRA LOOP2		;(2 Cycle if jump)
     
-   END_DELAY:
-    NOP
-    Return
-        
-    
-
+    END_DELAY:
+	NOP
+	Return
+*/
 
 ;..............................................................................
 ;Subroutine: Initialization of W registers to 0x0000
