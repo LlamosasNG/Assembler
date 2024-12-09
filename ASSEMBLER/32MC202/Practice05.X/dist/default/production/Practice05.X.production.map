@@ -66,11 +66,11 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0x82            0xc3  (195)
-.myconstbuffer               0x282                0xdc           0x14a  (330)
-.text                        0x35e                0x2a            0x3f  (63)
-.dinit                       0x388                0x14            0x1e  (30)
+.text                        0x282               0x156           0x201  (513)
+.myconstbuffer               0x3d8                0xc2           0x123  (291)
+.dinit                       0x49a                0x14            0x1e  (30)
 
-                 Total "program" memory used (bytes):          0x26a  (618) 1%
+                 Total "program" memory used (bytes):          0x405  (1029) 3%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x800]
@@ -99,16 +99,16 @@ External Symbols in Program Memory (by address):
                   0x000206                  __data_init_standard
                   0x000206                  __data_init
                   0x00027c                  __DefaultInterrupt
-                  0x00035e                  __reset
-                  0x00037c                  _wreg_init
+                  0x000282                  __reset
+                  0x0003cc                  _wreg_init
 
 External Symbols in Program Memory (by name):
 
                   0x00027c                  __DefaultInterrupt
                   0x000206                  __data_init
                   0x000206                  __data_init_standard
-                  0x00035e                  __reset
-                  0x00037c                  _wreg_init
+                  0x000282                  __reset
+                  0x0003cc                  _wreg_init
 
 Memory Configuration
 
@@ -160,7 +160,7 @@ LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libfx-elf.a
                     0x0fff                  __YDATA_END = 0xfff
 
 .reset            0x000000          0x4
-                  0x000000          0x2 SHORT 0x35e ABSOLUTE (__reset)
+                  0x000000          0x2 SHORT 0x282 ABSOLUTE (__reset)
                   0x000001          0x2 SHORT 0x4
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
@@ -232,9 +232,9 @@ __FUID3
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x14 build/default/production/newmainasm33.o
 
-.debug_line       0x000000         0x51
+.debug_line       0x000000         0xdd
  *(.debug_line)
- .debug_line      0x000000         0x51 build/default/production/newmainasm33.o
+ .debug_line      0x000000         0xdd build/default/production/newmainasm33.o
 
 .debug_frame
  *(.debug_frame)
@@ -909,14 +909,14 @@ __c30_signature
 .ybss               0x0c00         0x80
  .ybss              0x0c00         0x80 build/default/production/newmainasm33.o
 
-.myconstbuffer    0x000282         0xdc
+.text             0x000282        0x156
+ .text            0x000282        0x156 build/default/production/newmainasm33.o
+                  0x000282                  __reset
+                  0x0003cc                  _wreg_init
+
+.myconstbuffer    0x0003d8         0xc2
  .myconstbuffer
-                  0x000282         0xdc build/default/production/newmainasm33.o
+                  0x0003d8         0xc2 build/default/production/newmainasm33.o
 
-.text             0x00035e         0x2a
- .text            0x00035e         0x2a build/default/production/newmainasm33.o
-                  0x00035e                  __reset
-                  0x00037c                  _wreg_init
-
-.dinit            0x000388         0x14
- .dinit           0x000388         0x14 data_init
+.dinit            0x00049a         0x14
+ .dinit           0x00049a         0x14 data_init

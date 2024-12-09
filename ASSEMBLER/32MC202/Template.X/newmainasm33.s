@@ -113,8 +113,50 @@ MOV	W0, 0X0800	;Example of store in a specific address
 	
 MOV	#0X0800, W1	;W1 as a pointer of the address 0x0800
 MOV	[W1++], W2	;Get data from specific address using a pointer
-
-Tiempo:
+				  
+done :
+    COM PORTB
+    CALL delay_250ms
+    BRA done
+    
+/*
+delay_250ms:
+    MOV #8900, W7
+    
+    LOOP1:
+	CP0 W7		    ;(1 Cycle)
+	BRA Z, END_DELAY    ;(1 Cycle if not jump)
+	DEC W7, W7	    ;(1 Cycle)
+	MOV #5, W8	    ;(1 Cycle)
+	
+    LOOP2:
+	DEC W8, W8	    ;(1 Cycle)
+	CP0 W8		    ;(1 Cycle)
+	BRA Z, LOOP1	    ;(1 Cycle if not jump)
+	BRA LOOP2	    ;(2 Cycle if jump)
+   
+    END_DELAY:
+	RETURN
+     
+delay_500ms:
+    MOV #18000, W7
+    
+    LOOP1:
+	CP0 W7		    ;(1 Cycle)
+	BRA Z, END_DELAY    ;(1 Cycle if not jump)
+	DEC W7, W7	    ;(1 Cycle)
+	MOV #5, W8	    ;(1 Cycle)
+	
+    LOOP2:
+	DEC W8, W8	    ;(1 Cycle)
+	CP0 W8		    ;(1 Cycle)
+	BRA Z, LOOP1	    ;(1 Cycle if not jump)
+	BRA LOOP2	    ;(2 Cycle if jump)
+   
+    END_DELAY:
+	RETURN
+	
+delay_1s:
     MOV #20000, W7
     
     LOOP1:
@@ -130,16 +172,11 @@ Tiempo:
 	BRA LOOP2	    ;(2 Cycle if jump)
    
     END_DELAY:
-	NOP
-	CALL Tiempo
-        
-    done:		    ;INFINITE LOOP    
-	COM PORTB
-	NOP
-	BRA done            ;Place holder for last line of executed code
-
+	RETURN
+*/
+	
 /* Exercise 1 */
-/* 
+/*
 MOV     #0X0800, W1    ; Inicializar W1 con la dirección base 0x0800
 CLR     W0             ; Inicializar W0 con el valor 0 (valor a almacenar)
 
@@ -150,7 +187,7 @@ LOOP:
     CP      W0, #10        ; Comparar el valor de W0 con 10 (límite para este ejemplo)
     BRA     LT, LOOP       ; Si W0 es menor que 10, repetir el ciclo
 				  			  
-MOV	#0X4087,    W0
+MOV #0X4087, W0
 */
 ;..............................................................................
 ;Subroutine: Initialization of W registers to 0x0000
