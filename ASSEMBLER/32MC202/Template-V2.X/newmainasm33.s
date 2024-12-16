@@ -123,13 +123,13 @@ done:	    ;INFINITE LOOP
     BRA     done              ;Place holder for last line of executed code
     
 delay_350ms:
-    MOV #1000, W7
+    MOV #20000, W7
     
     LOOP3:
 	CP0 W7			;(1 Cycle)
 	BRA Z, END_DELAY	;(1 Cycle if not jump)
 	DEC W7, W7		;(1 Cycle)
-	MOV #69, W8		;(1 Cycle)
+	MOV #50, W8		;(1 Cycle)
 	
     LOOP4:
 	DEC W8, W8		;(1 Cycle)
