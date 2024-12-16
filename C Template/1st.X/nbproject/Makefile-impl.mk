@@ -24,11 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-<<<<<<< HEAD
-PROJECTNAME=Practice06.X
-=======
-PROJECTNAME=Practice07.X
->>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
+PROJECTNAME=1st.X
 
 # Active Configuration
 DEFAULTCONF=default

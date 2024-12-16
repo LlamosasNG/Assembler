@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
+<<<<<<< HEAD
   <executable name="dist/default/production/Practice06.X.production.elf">
+=======
+  <executable name="dist/default/production/Practice07.X.production.elf">
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
@@ -11,8 +15,13 @@
     <memory name="program">
       <units>bytes</units>
       <length>33024</length>
+<<<<<<< HEAD
       <used>1092</used>
       <free>31932</free>
+=======
+      <used>996</used>
+      <free>32028</free>
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
     </memory>
   </executable>
 </project>

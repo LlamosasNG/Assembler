@@ -58,11 +58,19 @@
                                  ;address that is a multiple of 2
 ps_coeff:
     .hword   0x0002, 0x0003, 0x0005, 0x000A
+<<<<<<< HEAD
 Poema:
  .string "   ABCDEFG HIJKLMN OPQRSTU VWXYZ @"
 	
 	
 
+=======
+    
+Poema:
+ .string "   HOLA NOE@"
+	
+	
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 ;..............................................................................
 ;Uninitialized variables in X-space in data memory
 ;..............................................................................
@@ -71,7 +79,10 @@ Poema:
 x_input: .space 2*SAMPLES        ;Allocating space (in bytes) to variable.
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 ;..............................................................................
 ;Uninitialized variables in Y-space in data memory
 ;..............................................................................
@@ -80,8 +91,11 @@ x_input: .space 2*SAMPLES        ;Allocating space (in bytes) to variable.
 y_input:  .space 2*SAMPLES
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 ;..............................................................................
 ;Uninitialized variables in Near data memory (Lower 8Kb of RAM)
 ;..............................................................................
@@ -91,8 +105,11 @@ var1:     .space 2               ;Example of allocating 1 word of space for
                                  ;variable "var1".
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 ;..............................................................................
 ;Code Section in Program Memory
 ;..............................................................................
@@ -123,7 +140,11 @@ __reset:
     CLR     W2                 ; Contador de animación (0, 1, 2)
     MOV #0x0041, W3
     MOV #32, W7
+<<<<<<< HEAD
     MOV #33, W12
+=======
+    MOV #12, W12
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
     CLR     W6                 ; Contador de display (0 a 3)
     CLR     W11                ; Contador de desplazamiento del arreglo (offset)
 
@@ -136,10 +157,16 @@ main_loop:
     ; Sumar el desplazamiento del arreglo al inicio del arreglo
     ADD W11, W5, W5             ; Desplazar la dirección base usando W11
 
+<<<<<<< HEAD
     ; Ciclo para controlar cada display
     CLR W6                      ; Reiniciar contador de displays
     MOV #4, W13                 ; Número de displays a manejar
     
+=======
+    ; Reiniciar contador de displays
+    CLR W6                      ; Reiniciar contador de displays
+
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 display_loop:
     ; Activar el display correspondiente
     MOV W6, W0                  ; Copiar el contador a W0
@@ -156,6 +183,7 @@ display_loop:
     CALL Letra
     MOV W4, LATB                ; Escribir en LATB para mostrar el carácter
 
+<<<<<<< HEAD
     ; Retardo prolongado para asegurar visibilidad
     CALL delay_long
 
@@ -167,14 +195,31 @@ display_loop:
 
     ; Incrementar el desplazamiento del poema
     INC W11, W11                ; Avanzar al siguiente carácter
+=======
+    ; Retardo breve para mantener la multiplexación estable
+    CALL delay_multiplex
+
+    ; Incrementar el contador de displays
+    INC W6, W6                  ; Incrementar W6 en 1
+    CP W6, #4                   ; ¿Llegó al último display?
+    BRA NZ, display_loop        ; Si no, continuar con el siguiente display
+
+    ; Desplazar el poema después de completar todos los displays
+    INC W11, W11                ; Avanzar al siguiente carácter del poema
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
     CP W11, W12                 ; Longitud del poema
     BRA NZ, delay_scroll        ; Si no se alcanza el final, aplicar retardo
     CLR W11                     ; Reiniciar desplazamiento del arreglo
 
 delay_scroll:
+<<<<<<< HEAD
     CALL delay_very_long        ; Retardo prolongado antes del siguiente desplazamiento
     BRA main_loop               ; Repetir ciclo
 
+=======
+    CALL delay_very_long        ; Retardo largo para desplazamiento 
+    BRA main_loop               ; Repetir ciclo
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
     
 ActivarDisplay:
     ; Activa el display correspondiente usando LATA con intermediario
@@ -207,6 +252,10 @@ EncenderD4:
     MOV #16, W1     ; Coloca el valor para el cuarto display en W1
     MOV W1, LATA        ; Escribe en LATA
     RETURN
+<<<<<<< HEAD
+=======
+
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 Letra:
     CP W4, W3 ;A
     bra z, Cambio1
@@ -424,6 +473,7 @@ cambioEspacio:
     MOV #0x0041, W3
     mov #0xFFFF, w4;ESPACIO
     return
+<<<<<<< HEAD
 delay:
         ; Seleccionar el tiempo de retardo según W1
         CP0     W1
@@ -447,11 +497,17 @@ delay_1s_loop2:
     
 delay_multiplex:
     MOV #10000, W4              ; Ajustar para sincronizar los displays
+=======
+
+delay_multiplex:
+    MOV #15000, W4              ; Ajusta este valor para mantener la estabilidad del display
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 delay_multiplex_loop:
     DEC W4, W4
     CP0 W4
     BRA NZ, delay_multiplex_loop
     RETURN
+<<<<<<< HEAD
 
 delay_long:
     MOV #20000, W4              ; Incrementar considerablemente este valor si es necesario
@@ -463,6 +519,11 @@ delay_long_loop:
 
 delay_very_long:
     MOV #65000, W4             ; Ajusta este valor para un desplazamiento más lento
+=======
+    
+delay_very_long:
+    MOV #50000, W4             ; Incrementar este valor para que el desplazamiento sea más lento
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 delay_very_long_loop:
     DEC W4, W4
     CP0 W4
@@ -486,9 +547,12 @@ _wreg_init:
     CLR W14
     RETURN
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 497d5b11f83be73c55d574db5125c8dac751bce6
 ;--------End of All Code Sections ---------------------------------------------
 
 .end                               ;End of program code in this file
